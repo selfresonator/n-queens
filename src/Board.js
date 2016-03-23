@@ -80,34 +80,31 @@
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
       var count = 0;
-      console.log('row index',this.rows()[rowIndex]);
       _.each(this.rows()[rowIndex], function(column) {
-      // console.log("this is column", column, key);
         if(column === 1) {
           count++;
         };
       });
-      
+
       return count >= 2 ? true : false; // fixme
     },
 
     // test if any rows on this board contain conflicts
     // maybe use hasRowConflictAt
     hasAnyRowConflicts: function() {
-      //iterate thru all but last
-      // var count = 0; 
-      // _.each(this.rows(), function(row) {
-      //   // console.log("this is row", row)
-      //   _.each(row, function(column, key) {
-      //   // console.log("this is column", column, key);
-      //     if(column === 1) {
-      //       count++;
-      //       // console.log(count);
-      //     };
-      //   });
-      // });
-       this.hasRowConflictAt(3)
-      // return count >= 2 ? true : false; // fixme
+      // iterate thru all but last
+      var found = false;
+      var count = 0;
+      var that = this;
+      console.log('row:',this.rows()[1])
+      console.log(this.hasRowConflictAt(1))
+      _.each(this.rows(), function(row, index) {
+        if (that.hasRowConflictAt(index)) {
+          var found = true;    
+        }
+      });
+
+      return count >= 2 ? true : false;
     },
 
 
