@@ -79,12 +79,33 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
+      // count varible; to count how many times something occurs in row
+      var count = 0;
+      // iterate thru this[rowIndex]
+      // console.log("hasRowConflictAt", this);
+      // incremete count++ when we find '1' 
+      // if count is greater than 1 return true
+
       return false; // fixme
     },
 
     // test if any rows on this board contain conflicts
+    // maybe use hasRowConflictAt
     hasAnyRowConflicts: function() {
-      return false; // fixme
+      //iterate thru all but last
+      var count = 0; 
+      _.each(this.attributes, function(att, key) {
+        // console.log("this is all", att)
+        if (!isNaN(key)) {
+          _.each(att, function(column) {
+            if(column === 1) {
+              count++;
+            };
+          });
+        }
+        
+      });
+      return count > 1 ? true : false; // fixme
     },
 
 
