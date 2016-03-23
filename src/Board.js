@@ -79,33 +79,35 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      // count varible; to count how many times something occurs in row
       var count = 0;
-      // iterate thru this[rowIndex]
-      // console.log("hasRowConflictAt", this);
-      // incremete count++ when we find '1' 
-      // if count is greater than 1 return true
-
-      return false; // fixme
+      console.log('row index',this.rows()[rowIndex]);
+      _.each(this.rows()[rowIndex], function(column) {
+      // console.log("this is column", column, key);
+        if(column === 1) {
+          count++;
+        };
+      });
+      
+      return count >= 2 ? true : false; // fixme
     },
 
     // test if any rows on this board contain conflicts
     // maybe use hasRowConflictAt
     hasAnyRowConflicts: function() {
       //iterate thru all but last
-      var count = 0; 
-      _.each(this.attributes, function(att, key) {
-        // console.log("this is all", att)
-        if (!isNaN(key)) {
-          _.each(att, function(column) {
-            if(column === 1) {
-              count++;
-            };
-          });
-        }
-        
-      });
-      return count > 1 ? true : false; // fixme
+      // var count = 0; 
+      // _.each(this.rows(), function(row) {
+      //   // console.log("this is row", row)
+      //   _.each(row, function(column, key) {
+      //   // console.log("this is column", column, key);
+      //     if(column === 1) {
+      //       count++;
+      //       // console.log(count);
+      //     };
+      //   });
+      // });
+       this.hasRowConflictAt(3)
+      // return count >= 2 ? true : false; // fixme
     },
 
 
@@ -120,7 +122,29 @@
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
-      return false; // fixme
+      var found = false;
+      var truthObj = {};
+      truthObj[0] = 0;
+      truthObj[1] = 0;
+      truthObj[2] = 0;
+      truthObj[3] = 0;
+
+      _.each(this.rows(), function(row){
+        _.each(row, function(column, key){
+          if(column === 1){
+            truthObj[key]++;
+          }
+        })
+      });
+
+      _.each(truthObj, function(conflicts) {
+        // console.log('conflict:',conflicts,'  truthobj conflict value:',truthObj[conflicts])
+        if (conflicts > 1) {
+          found = true;
+        }
+      });
+
+      return found;
     },
 
 
