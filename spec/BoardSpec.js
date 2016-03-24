@@ -66,6 +66,7 @@ describe("Board", function() {
   });
   
   describe("Board with easy minor diagonal conflict", function() {
+      console.log('MinorConflictAtEasy');
     verifyConflictTypes(['minorDiagonal', 'queens'], [
       [0, 0, 1, 0],
       [0, 1, 0, 0],
@@ -75,6 +76,7 @@ describe("Board", function() {
   });
 
   describe("Board with hard minor diagonal conflict", function() {
+      console.log('MinorConflictAtHard');
     verifyConflictTypes(['minorDiagonal', 'queens'], [
       [0, 0, 0, 0],
       [0, 0, 0, 0],
