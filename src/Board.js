@@ -96,7 +96,7 @@
       var found = false;
       var that = this;
       _.each(this.rows(), function(row, index) {
-        (that.hasRowConflictAt(index)) && (found = true); 
+        (that.hasRowConflictAt(index)) && (found = true);
       });
 
       return found;
@@ -181,7 +181,7 @@
         //   count++;
         // }
         (this.get(i)[minorDiagonalColumnIndexAtFirstRow-i] === 1) && count++;
-        minorDiagonalColumnIndexAtFirstRow--;
+        // minorDiagonalColumnIndexAtFirstRow--;
         console.log(count, i, minorDiagonalColumnIndexAtFirstRow)
       }
       return count > 1 ? true : false;
