@@ -96,7 +96,7 @@
       var found = false;
       var that = this;
       _.each(this.rows(), function(row, index) {
-        (that.hasRowConflictAt(index)) && (found = true); 
+        (that.hasRowConflictAt(index)) && (found = true);
       });
 
       return found;
