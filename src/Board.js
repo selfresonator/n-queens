@@ -99,6 +99,7 @@
         (that.hasRowConflictAt(index)) && (found = true); 
       });
 
+
       return found;
 
     },
@@ -150,6 +151,9 @@
       //how does a diagonal work.  arr[0][0], arr[1][1], arr[2][2], arr[3][3]
       //how does a diagonal work.  arr[index+1][index+1] to increment diagonally
       //conflict equals: arr[i][i] arr[i+1][i+1]
+      // will needs this.rows(), _getFirstrowcolumnformajorindex
+      var indy = this._getFirstRowColumnIndexForMajorDiagonalOn(majorDiagonalColumnIndexAtFirstRow);
+      console.log(indy);
       return false; // fixme
     },
 
