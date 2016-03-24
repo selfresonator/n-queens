@@ -182,7 +182,7 @@
         // }
         (this.get(i)[minorDiagonalColumnIndexAtFirstRow-i] === 1) && count++;
         // minorDiagonalColumnIndexAtFirstRow--;
-        console.log(count, i, minorDiagonalColumnIndexAtFirstRow)
+        console.log(count, i, minorDiagonalColumnIndexAtFirstRow);
       }
       return count > 1 ? true : false;
     },
