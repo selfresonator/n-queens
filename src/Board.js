@@ -147,6 +147,9 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
+      //how does a diagonal work.  arr[0][0], arr[1][1], arr[2][2], arr[3][3]
+      //how does a diagonal work.  arr[index+1][index+1] to increment diagonally
+      //conflict equals: arr[i][i] arr[i+1][i+1]
       return false; // fixme
     },
 
