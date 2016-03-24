@@ -175,12 +175,8 @@
       var count = 0;
       for (var i = 0; i < this.rows().length; i++) {
         (this.get(i)[minorDiagonalColumnIndexAtFirstRow-i] === 1) && count++;
-<<<<<<< HEAD
-        // minorDiagonalColumnIndexAtFirstRow--;
-        console.log(count, i, minorDiagonalColumnIndexAtFirstRow);
-=======
->>>>>>> 37abd2bdd2b7b2af7f21870cce17484ca1eb61f7
       }
+      
       return count > 1 ? true : false;
     },
 
