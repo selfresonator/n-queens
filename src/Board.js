@@ -94,17 +94,13 @@
     hasAnyRowConflicts: function() {
       // iterate thru all but last
       var found = false;
-      var count = 0;
       var that = this;
-      console.log('row:',this.rows()[1])
-      console.log(this.hasRowConflictAt(1))
       _.each(this.rows(), function(row, index) {
-        if (that.hasRowConflictAt(index)) {
-          var found = true;    
-        }
+        (that.hasRowConflictAt(index)) && (found = true); 
       });
 
-      return count >= 2 ? true : false;
+      return found;
+
     },
 
 
